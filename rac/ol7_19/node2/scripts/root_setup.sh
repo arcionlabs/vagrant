@@ -41,5 +41,6 @@ cd ~/.ssh
 rm -f *
 cat /dev/zero | ssh-keygen -t dsa -q -N "" > /dev/null
 cat id_dsa.pub >> authorized_keys
+ssh-keyscan -H ${NODE2_HOSTNAME} >> ~/.ssh/known_hosts
 ssh ${NODE2_HOSTNAME} date
 echo "${ROOT_PASSWORD}" > /tmp/temp1.txt
